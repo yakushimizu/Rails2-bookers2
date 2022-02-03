@@ -1,9 +1,9 @@
 <% book.book_comments.each do |post_comment| %>
  <p><%= image_tag book_comment.user.get_profile_image, size:"50x50" %></p>
-              <%= book_comment.user.name %>
-              <%= book_comment.comment %>
-            <% end %>
-        <%= form_with model: [book, book_comment], local: true do |f| %>
-          <%= f.text_area :comment, rows: '5', placeholder: "コメントをここに", class: "form-control" %>
-          <%= f.submit "送信する" %>
-        <% end %>
+  <%= book_comment.user.name %>
+  <%= book_comment.comment %>
+<% end %>
+<%= form_with model: [book, book_comment], local: false do |f| %>
+  <%= f.text_area :comment, rows: '5', placeholder: "コメントをここに", class: "form-control" %>
+  <%= f.submit "送信する" %>
+<% end %>
