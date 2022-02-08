@@ -4,6 +4,7 @@
       <th></th>
       <th>Title</th>
       <th>Opinion</th>
+      <th>Tag</th>
       <th colspan="5"></th>
     </tr>
   </thead>
@@ -16,6 +17,11 @@
         </td>
         <td><%= link_to book.title,book, class: "book_#{book.id}" %></td>
         <td><%= book.body %></td>
+        <td>
+          <% book.tags.each do |tag| %>
+            <li style="list-style: none;"><%= link_to tag.name, search_path(word: tag.name, range:"tag", method: "perfect") %></li>
+          <% end %>
+        </td>
         <td id="btn_<%= book.id %>">
           <%= render "favorites/btn", book: book %>
         </td>
