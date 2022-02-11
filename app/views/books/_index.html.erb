@@ -32,12 +32,12 @@
 
         <script>
         $('#star-rate<%= book.id%>').raty({
-          size      : 36,
+          size      : 20,
           starOff   : '<%= asset_path('star-off.png') %>',
           starOn    : '<%= asset_path('star-on.png') %>',
           half      : false,
           readOnly: true,
-          score: <%= book.star %>,
+          score: '<%= book.star %>',
         });
        </script>
       </tr>

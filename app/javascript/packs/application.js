@@ -17,3 +17,4 @@ require('packs/raty')
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
+
