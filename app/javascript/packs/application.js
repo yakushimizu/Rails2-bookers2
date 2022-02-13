@@ -17,4 +17,5 @@ require('packs/raty')
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
-
+import Chart from "chart.js/auto";
+global.Chart = Chart;
